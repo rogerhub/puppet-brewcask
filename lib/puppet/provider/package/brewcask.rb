@@ -28,7 +28,7 @@ Puppet::Type.type(:package).provide :brewcask,
   end
 
   def self.current(name)
-    caskdir = Pathname.new "#{home}/Caskroom/#{name}"
+    caskdir = Pathname.new "/opt/homebrew-cask/Caskroom/#{name}"
     caskdir.directory? && caskdir.children.size >= 1 && caskdir.children.sort.last.to_s
   end
 
